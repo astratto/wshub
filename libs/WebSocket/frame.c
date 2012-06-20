@@ -61,6 +61,11 @@ void construct(const char *data) {
     c++;
     dataPtr++;
   }*/
+
+  // free up memory
+  free(_frame->header);
+  free(_frame->_framePayloadData);
+  free(_frame);
 }
 
 char encodeDecodeMask(int _char, int masked, int offset) {
